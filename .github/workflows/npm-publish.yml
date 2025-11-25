@@ -5,9 +5,9 @@ name: CI & Publish
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
   release:
     types: [published]
   workflow_dispatch:
@@ -28,10 +28,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          # Removed cache since it requires a lock file
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install   # switched from npm ci
 
       - name: Run tests
         run: npm test
@@ -49,25 +49,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com/'
           scope: '@snakenogara'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install   # switched from npm ci
 
       - name: Build (if defined)
         run: npm run build --if-present
 
       - name: Authenticate to GitHub Packages
-        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm publish
 
-      - name: Authenticate to npm registry
-        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Publish package to npm
         env:
