@@ -1,6 +1,6 @@
 {
   "name": "@jacobaragon24/graphql850",
-  "version": "8.5.1",
+  "version": "8.5.0",
   "description": "A lightweight GraphQL utility for finding and archiving data.",
   "main": "index.js",
   "scripts": {
