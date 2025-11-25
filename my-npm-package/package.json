@@ -1,7 +1,7 @@
 {
-  "name": "my-npm-package",
-  "version": "1.0.0",
-  "description": "A brief description of my npm package.",
+  "name": "graphql-v850",
+  "version": "8.5.0",
+  "description": "Find & Archive.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
