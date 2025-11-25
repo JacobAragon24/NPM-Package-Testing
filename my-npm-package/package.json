@@ -1,16 +1,30 @@
 {
   "name": "@snakenogara/graphql850",
   "version": "8.5.0",
-  "description": "Find & Archive.",
+  "description": "A lightweight GraphQL utility for finding and archiving data.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint ."
   },
-  "keywords": [],
+  "keywords": [
+    "graphql",
+    "archive",
+    "search",
+    "data",
+    "utility",
+    "nodejs"
+  ],
   "author": "Snake Nogara",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.56.0"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
