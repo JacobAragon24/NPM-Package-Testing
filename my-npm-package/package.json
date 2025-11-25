@@ -11,4 +11,5 @@
   "license": "ISC",
   "dependencies": {"npm install @aws-sdk/client-ec2 @aws-sdk/client-s3 archiver axios": ""},
   "devDependencies": {}
+  "publishConfig": { "access": "public" }
 }
