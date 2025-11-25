@@ -2,9 +2,9 @@
   "name": "graphql-v850",
   "version": "8.5.0",
   "description": "Find & Archive.",
-  "main": "src/index.js",
+ "main": "index.js"
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Snake Nogara",
